@@ -43,4 +43,15 @@ class Request
         header('Location: '.$url);
         exit();
     }
+    public function getGrade(): array
+    {
+        $body = [];
+        if ($this->method() === 'post') {
+            foreach ($_POST as $key => $value){
+                $body[$key] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_NUMBER_INT);
+            }
+        }
+        return $body;
+    }
+
 }

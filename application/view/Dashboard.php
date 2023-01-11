@@ -7,6 +7,9 @@ $GroupId = Application::$app->user->getDisplay('GroupId');
     </div>
 <?php if ($GroupId == 1){
     ?>
+    <div class="col-12">
+        <div class="alert alert-success">Go Add Student Grade Block In WiseChain <a href="/test">Click Here..</a></div>
+    </div>
     <div class="row">
     <div class="col-lg-3 col-md-6 col-12">
         <div class="card text-white bg-warning mb-4 shadow">
@@ -97,8 +100,8 @@ $GroupId = Application::$app->user->getDisplay('GroupId');
                     </tr>
                     <tr>
                         <th scope="row">
-                            <img src="<?php echo IMG; ?>doctors/Dr-Waleed.png" class="rounded-circle me-2" alt="Dr-Waleed" width="23" height="23">
-                            Dr. Malek
+                            <img src="<?php echo IMG; ?>doctors/Dr-Safaa.png" class="rounded-circle me-2" alt="Dr-Waleed" width="23" height="23">
+                            Dr. Safaa
                         </th>
                         <td>Os</td>
                         <td>7</td>
@@ -110,8 +113,8 @@ $GroupId = Application::$app->user->getDisplay('GroupId');
                     </tr>
                     <tr>
                         <th scope="row">
-                            <img src="<?php echo IMG; ?>doctors/Dr-Waleed.png" class="rounded-circle me-2" alt="Dr-Waleed" width="23" height="23">
-                            Dr. Ahmed
+                            <img src="<?php echo IMG; ?>doctors/Dr-Ali.png" class="rounded-circle me-2" alt="Dr-Waleed" width="23" height="23">
+                            Dr. Ali
                         </th>
                         <td>Java</td>
                         <td>8</td>
@@ -123,8 +126,8 @@ $GroupId = Application::$app->user->getDisplay('GroupId');
                     </tr>
                     <tr>
                         <th scope="row">
-                            <img src="<?php echo IMG; ?>doctors/Dr-Waleed.png" class="rounded-circle me-2" alt="Dr-Waleed" width="23" height="23">
-                            Dr. Ali
+                            <img src="<?php echo IMG; ?>doctors/Dr-Feras.png" class="rounded-circle me-2" alt="Dr-Waleed" width="23" height="23">
+                            Dr. Feras
                         </th>
                         <td>AI</td>
                         <td>2</td>
@@ -156,12 +159,46 @@ $GroupId = Application::$app->user->getDisplay('GroupId');
             </thead>
             <tbody>
             <tr>
-                <th scope="row">Dr.Ali</th>
-                <td>3</td>
+                <th scope="row"><img src="<?php echo IMG; ?>doctors/Dr-Waleed.png" class="rounded-circle me-2" alt="Dr-Waleed" width="23" height="23">
+                    <a href="/classes">Dr. Walid Abdulrahim</a>
+                </th>
+                <td>1</td>
             </tr>
             </tbody>
         </table>
     </div>
+
+    <div class="col-12">
+        <div class="row">
+            <div class="col-8 py-2">
+                <h5><i class="bi bi-speedometer2 px-1"></i>My Classes</h5>
+            </div>
+            <div class="col-4">
+                <input class="form-control" placeholder="Type to search...">
+            </div>
+        </div>
+        <table class="table table-striped table-hover table-bordered text-center table-sm align-middle">
+            <thead class="table-light">
+            <tr>
+                <th scope="col"><i class="bi bi-book px-1"></i>Class Name</th>
+                <th scope="col"><i class="bi bi-list-ol px-1"></i>Section number</th>
+                <th scope="col"><i class="bi bi-calendar-day px-1"></i>Days</th>
+                <th scope="col"><i class="bi bi-clock px-1"></i>Time</th>
+                <th scope="col"><i class="bi bi-building px-1"></i>Class</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">...</th>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
     <?php
 }elseif ($GroupId ==3){
     ?>
@@ -176,8 +213,8 @@ $GroupId = Application::$app->user->getDisplay('GroupId');
                 <th scope="col"><i class="bi bi-book px-1"></i>Class Name</th>
                 <th scope="col"><i class="bi bi-list-ol px-1"></i>Section number</th>
                 <th scope="col"><i class="bi bi-calendar-day px-1"></i>Days</th>
-                <th scope="col"><i class="bi bi-clock px-1"></i>Appointment</th>
-                <th scope="col"><i class="bi bi-building px-1"></i>Hall</th>
+                <th scope="col"><i class="bi bi-clock px-1"></i>Time</th>
+                <th scope="col"><i class="bi bi-building px-1"></i>Class</th>
             </tr>
             </thead>
             <tbody>

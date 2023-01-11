@@ -25,7 +25,13 @@ $app->router->get('/privileges', [SettingController::class, 'privileges']);
 $app->router->get('/groups', [SettingController::class, 'groups']);
 $app->router->get('/block', [BlockController::class, 'block']);
 $app->router->get('/student', [LoginController::class, 'student']);
+$app->router->post('/student', [LoginController::class, 'student']);
 //test
 $app->router->get('/test', [HomeController::class, 'test']);
+$app->router->get('/students', [HomeController::class, 'students']);
+
+$app->router->get('/majors', [HomeController::class, 'majors']);
+$app->router->get('/doctors', [HomeController::class, 'doctors']);
+$app->router->get('/classes', [HomeController::class, 'classes']);
 
 $app->run();

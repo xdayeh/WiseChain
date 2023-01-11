@@ -34,7 +34,6 @@ abstract class DataModel extends Model
         $statement->execute();
         return true;
     }
-
     public function getAll($columns = '*', $filter = null): bool|array
     {
         if (is_array($columns)) $columns = implode(', ', $columns);
@@ -47,5 +46,33 @@ abstract class DataModel extends Model
         }
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_CLASS);
+    }
+
+
+
+
+
+
+
+    public function UpdateGrade(): bool
+    {
+        $tableName  = $this->tableName();
+        $attributes = $this->attributes();
+        $count      = count($_POST["id"]);
+
+
+        if (Application::$app->user->getDisplay('GroupId') == 2){
+            for($i=0;$i<$count;$i++){
+                $stat = Application::$app->database->prepare("UPDATE $tableName SET `Approve` = 1 WHERE $attributes[1] = '" . $_POST['Student_ID'][$i] ."'");
+                $stat->execute();
+            }
+        }else{
+            for($i=0;$i<$count;$i++){
+                $stat = Application::$app->database->prepare("UPDATE $tableName SET $attributes[3] = '" . $_POST['Grade'][$i] . "' WHERE $attributes[1] = '" . $_POST['Student_ID'][$i] ."' And `Approve` = 0");
+                $stat->execute();
+            }
+        }
+
+        return true;
     }
 }

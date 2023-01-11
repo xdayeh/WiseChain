@@ -93,10 +93,19 @@ use const WiseChain\JS; ?>
 <script src="<?php echo JS; ?>jquery-3.6.3.min.js" crossorigin></script>
 <script src="<?php echo JS; ?>bootstrap.min.js" crossorigin></script>
 <script src="<?php echo JS; ?>bootstrap.bundle.min.js" crossorigin></script>
+
 <script src="<?php echo JS; ?>react.production.min.js" crossorigin></script>
 <script src="<?php echo JS; ?>react-dom.production.min.js" crossorigin></script>
 <script src="<?php echo JS; ?>babel.min.js" crossorigin></script>
+
+
 <script src="<?php echo JS; ?>web3.min.js" crossorigin></script>
+
+
+
+
+
+
 <script src="<?php echo JS; ?>main.js" ></script>
 <script src="<?php echo JS; ?>react.js"></script>
 <script src="<?php echo JS; ?>web3.js"></script>

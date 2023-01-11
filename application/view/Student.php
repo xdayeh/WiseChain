@@ -1,8 +1,10 @@
 <?php
 
 use WiseChain\core\Application;
+use WiseChain\core\Model;
 use const WiseChain\IMG;
 $GroupId = Application::$app->user->getDisplay('GroupId');
+/** @var Model $Student */
 ?>
 <h5><i class="bi bi-person px-1"></i>Student</h5>
 <div class="col-12">
@@ -30,7 +32,7 @@ $GroupId = Application::$app->user->getDisplay('GroupId');
         </thead>
         <tbody>
         <tr>
-            <td>Walid Abdulrahim</td>
+            <td>Dr. Walid Abdulrahim</td>
             <td>Semester 1 2022/2023</td>
             <td>Bachelors</td>
         </tr>
@@ -41,57 +43,87 @@ $GroupId = Application::$app->user->getDisplay('GroupId');
     <div class="col-4 pb-2">
         <input class="form-control" placeholder="Type to search...">
     </div>
-    <table class="table table-striped table-hover table-bordered text-center table-sm align-middle">
-        <thead class="table-light">
-        <tr>
-            <th scope="col"><i class="bi bi-book px-1"></i>Num.</th>
-            <th scope="col"><i class="bi bi-list-ol px-1"></i>Student ID</th>
-            <th scope="col"><i class="bi bi-calendar-day px-1"></i>Student name</th>
-            <th scope="col"><i class="bi bi-calendar-day px-1"></i>Grade</th>
-            <th scope="col"><i class="bi bi-calendar-day px-1"></i>Notes</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php
-            if ($GroupId==3){
-                ?>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>3190606073</td>
-                    <td><img src="<?php echo IMG; ?>students/Student.png" class="rounded-circle me-2" alt="..." width="23" height="23"> Rashed Safadi</td>
-                    <td>
-                        <label>
-                            <input name="grade" value="90">
-                        </label>
-                    </td>
-                    <td></td>
-                </tr>
+
+    <form method="POST" action="">
+        <table class="table table-striped table-hover table-bordered text-center table-sm align-middle">
+            <thead class="table-light">
+            <tr>
+                <th scope="col"><i class="bi bi-book px-1"></i>Num.</th>
+                <th scope="col"><i class="bi bi-list-ol px-1"></i>Student ID</th>
+                <th scope="col"><i class="bi bi-calendar-day px-1"></i>Student name</th>
+                <th scope="col"><i class="bi bi-calendar-day px-1"></i>Grade</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php if ($GroupId==3){
+                    foreach ($Student as $value => $Std){ ?>
+                    <tr>
+                        <th scope="row">
+                            <?php echo $Std->ID ?>
+                            <input hidden="hidden" name="id[]" type="number" value="<?php echo $Std->ID ?>">
+                        </th>
+                        <td>
+                            <?php echo $Std->Student_ID ?>
+                            <label>
+                                <input hidden="hidden" name="Student_ID[]" type="number" value="<?php echo $Std->Student_ID ?>">
+                            </label>
+                        </td>
+                        <td>
+                            <img src="<?php echo IMG; ?>students/Student.png" class="rounded-circle me-2" alt="..." width="23" height="23">
+                            <?php echo $Std->Student_Name ?>
+                        </td>
+                        <td>
+                            <label>
+                                <input required name="Grade[]" type="number" max="100" min="35" value="<?php echo $Std->Grade ?>" <?php if ($Std->Approve == 1) {echo 'disabled';} ?>>
+                            </label>
+                        </td>
+                    </tr>
+                    <?php }
+                } elseif ($GroupId==1){ ?>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>3190606073</td>
+                        <td><img src="<?php echo IMG; ?>students/Student.png" class="rounded-circle me-2" alt="..." width="23" height="23"> Rashed Safadi</td>
+                        <td>95</td>
+                    </tr>
                 <?php
-            }elseif ($GroupId==1){
-                ?>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>3190606073</td>
-                    <td><img src="<?php echo IMG; ?>students/Student.png" class="rounded-circle me-2" alt="..." width="23" height="23"> Rashed Safadi</td>
-                    <td>95</td>
-                    <td></td>
-                </tr>
+                } else if ($GroupId==2){
+                foreach ($Student as $value => $Std){ ?>
+                    <tr>
+                        <th scope="row">
+                            <?php echo $Std->ID ?>
+                            <input hidden="hidden" name="id[]" type="number" value="<?php echo $Std->ID ?>">
+                        </th>
+                        <td>
+                            <?php echo $Std->Student_ID ?>
+                            <label>
+                                <input hidden="hidden" name="Student_ID[]" type="number" value="<?php echo $Std->Student_ID ?>">
+                            </label>
+                        </td>
+                        <td>
+                            <img src="<?php echo IMG; ?>students/Student.png" class="rounded-circle me-2" alt="..." width="23" height="23">
+                            <?php echo $Std->Student_Name ?>
+                        </td>
+                        <td>
+                            <label>
+                                <input disabled required name="Grade[]" type="number" max="100" min="35" value="<?php echo $Std->Grade ?>">
+                            </label>
+                        </td>
+                    </tr>
+                <?php }
+            } ?>
+            </tbody>
+        </table>
+        <div class="text-center">
             <?php
+            if ($GroupId == 1){
+                echo '<button type="button" class="btn btn-primary" disabled>Add Block</button>';
+            }elseif ($GroupId == 2){
+                echo '<button type="submit" class="btn btn-primary" >Confirm</button>';
+            }elseif ($GroupId == 3){
+                echo '<button type="submit" class="btn btn-primary" value="submit">Save</button>';
             }
-        ?>
-
-        </tbody>
-    </table>
-    <div class="text-center">
-        <?php
-        if ($GroupId == 1){
-            echo '<button type="button" class="btn btn-primary" disabled>Add Block</button>';
-        }elseif ($GroupId == 2){
-            echo '<button type="button" class="btn btn-primary" disabled>Confirm</button>';
-        }elseif ($GroupId == 3){
-            echo '<button type="button" class="btn btn-primary" disabled>Save</button>';
-        }
-        ?>
-    </div>
+            ?>
+        </div>
+    </form>
 </div>
-

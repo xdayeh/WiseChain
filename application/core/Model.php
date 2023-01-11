@@ -9,6 +9,8 @@ abstract class Model
     public const RULE_MIN       = 'min';
     public const RULE_MAX       = 'max';
     public const RULE_UNIQUE    = 'unique';
+    public const RULE_NUMBER_MIN= 'nMin';
+    public const RULE_NUMBER_MAX= 'nMax';
     public array $errors        = [];
     public function loadData($data): void
     {
@@ -36,6 +38,14 @@ abstract class Model
                 if ($ruleName === self::RULE_MAX && strlen($value) > $rule['max']) {
                     $this->addErrorForRule($attribute, self::RULE_MAX, ['{max}' => $rule['max']]);
                 }
+
+                if ($ruleName === self::RULE_NUMBER_MIN && $value < $rule['nMin']) {
+                    $this->addErrorForRule($attribute, self::RULE_NUMBER_MIN, ['{nMin}' => $rule['nMin']]);
+                }
+                if ($ruleName === self::RULE_NUMBER_MAX && $value > $rule['nMax']) {
+                    $this->addErrorForRule($attribute, self::RULE_NUMBER_MAX, ['{nMax}' => $rule['nMax']]);
+                }
+
                 if ($ruleName === self::RULE_UNIQUE) {
                     $className = $rule['class'];
                     $uniqueAttr = $rule['attribute'] ?? $attribute;
@@ -71,6 +81,8 @@ abstract class Model
             self::RULE_MIN      => Application::$app->language->dictionary['Error_Min'],
             self::RULE_MAX      => Application::$app->language->dictionary['Error_Max'],
             self::RULE_UNIQUE   => Application::$app->language->dictionary['Error_UNIQUE'],
+            self::RULE_NUMBER_MIN   => 'The student grade must be more than 0',
+            self::RULE_NUMBER_MAX   => 'The student grade must be less than 100',
         ];
     }
     public function hasError($attribute)

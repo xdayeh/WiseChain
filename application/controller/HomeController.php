@@ -34,4 +34,20 @@ class HomeController extends Controller
             'Student' => (new Student)->getAll()
         ]);
     }
+    public function majors(): bool|array|string
+    {
+        return $this->render('majors');
+    }
+    public function doctors(): bool|array|string
+    {
+        return $this->render('doctors');
+    }
+    public function students(): bool|array|string
+    {
+        return $this->render('students');
+    }
+    public function classes(): bool|array|string
+    {
+        return $this->render('classes');
+    }
 }

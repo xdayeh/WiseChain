@@ -6,6 +6,7 @@ use JetBrains\PhpStorm\NoReturn;
 use WiseChain\core\Controller;
 use WiseChain\core\Request;
 use WiseChain\core\Response;
+use WiseChain\model\Student;
 use WiseChain\model\User;
 use WiseChain\core\Application;
 
@@ -39,8 +40,19 @@ class LoginController extends Controller
     {
         return $this->render('profile');
     }
-    public function student(): bool|array|string
+    public function student(Request $request, Response $response): bool|array|string
     {
-        return $this->render('student');
+        $student = new Student();
+        if ($request->isPost()){
+
+            $student->loadData($request->getBody());
+
+            if ($student->UpdateGrade()){
+                $response->redirect('/student');
+            }
+        }
+        return $this->render('student',[
+            'Student' => (new Student)->getAll()
+        ]);
     }
 }

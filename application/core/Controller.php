@@ -12,7 +12,7 @@ abstract class Controller
     public function __construct()
     {
         $this->registerMiddleware(new AuthMiddleware(
-            ['dashboard', 'setting', 'groups', 'privileges', 'profile', 'block','logout','student'],
+            ['dashboard', 'setting', 'groups', 'privileges', 'profile', 'block','logout','student','test','classes'],
             ['login']
         ));
     }

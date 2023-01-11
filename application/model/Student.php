@@ -4,24 +4,36 @@ namespace WiseChain\model;
 
 class Student extends DataModel
 {
-
+    public string $ID;
+    public string $Student_ID;
+    public string $Student_Name;
+    public string $Grade;
+    public string $Approve;
     public static function tableName(): string
     {
-        return 'Sections';
+        return 'test';
     }
 
     public static function primaryKey(): string
     {
-        // TODO: Implement primaryKey() method.
+        return 'ID';
     }
 
     public static function attributes(): array
     {
-
+        return ['ID','Student_ID','Student_Name','Grade','Approve'];
     }
 
     public function rules(): array
     {
-        // TODO: Implement rules() method.
+        return [
+            'Grade' =>
+                [
+                    self::RULE_REQUIRED,
+                    [self::RULE_NUMBER_MIN, 'nMin' => 0],
+                    [self::RULE_NUMBER_MAX, 'nMax' => 100]
+                ]
+        ];
     }
+
 }

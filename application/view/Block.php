@@ -12,22 +12,28 @@
         </tr>
         </thead>
         <tbody>
-            <tr data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <th scope="row"><span class="d-inline-block text-truncate" style="max-width: 200px;font-size: .875rem;">0x049d304c7c64c72d3a8004392ab93634a54c19faf24edd24318224ec461e0258</span></th>
+            <tr>
+                <th scope="row">
+                    <span class="d-inline-block text-truncate" style="max-width: 200px;font-size: .875rem;">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">0x049d304c7c64c72d3a8004392ab93634a54c19faf24edd24318224ec461e0258</a>
+                    </span>
+                </th>
                 <td>Transfer</td>
                 <td class="d-none d-lg-table-cell"><span class="d-inline-block text-truncate text-reset" style="max-width: 200px;font-size: .875rem;">0xa4a8e54179080cc8c96b0ad0a22747619271e291</span></td>
                 <td class="d-none d-lg-table-cell"><span class="d-inline-block text-truncate" style="max-width: 200px;font-size: .875rem;">0x36e19753b895648d84736bb564836b604fb64970</span></td>
                 <td>1 hr 52 mins ago</td>
             </tr>
             <tr data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <th scope="row"><span class="d-inline-block text-truncate" style="max-width: 200px;font-size: .875rem;">0x049d304c7c64c72d3a8004392ab93634a54c19faf24edd24318224ec461e0258</span></th>
+                <th scope="row"><span class="d-inline-block text-truncate" style="max-width: 200px;font-size: .875rem;">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">0x049d304c7c64c72d3a8004392ab93634a54c19faf24edd24318224ec461e0258</a></span></th>
                 <td>Transfer</td>
                 <td class="d-none d-lg-table-cell"><span class="d-inline-block text-truncate text-reset" style="max-width: 200px;font-size: .875rem;">0x36e19753b895648d84736bb564836b604fb64970</span></td>
                 <td class="d-none d-lg-table-cell"><span class="d-inline-block text-truncate" style="max-width: 200px;font-size: .875rem;">0x5d08489398dd7e1731713ea52ffb988ec961ead1</span></td>
                 <td>8 hrs 35 mins ago</td>
             </tr>
             <tr data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <th scope="row"><span class="d-inline-block text-truncate" style="max-width: 200px;font-size: .875rem;">0x049d304c7c64c72d3a8004392ab93634a54c19faf24edd24318224ec461e0258</span></th>
+                <th scope="row"><span class="d-inline-block text-truncate" style="max-width: 200px;font-size: .875rem;">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">0x049d304c7c64c72d3a8004392ab93634a54c19faf24edd24318224ec461e0258</a></span></th>
                 <td>Transfer</td>
                 <td class="d-none d-lg-table-cell"><span class="d-inline-block text-truncate text-reset" style="max-width: 200px;font-size: .875rem;">0x574e608c85fa1255400ed1646299358829001575</span></td>
                 <td class="d-none d-lg-table-cell"><span class="d-inline-block text-truncate" style="max-width: 200px;font-size: .875rem;">0x36e19753b895648d84736bb564836b604fb64970</span></td>
