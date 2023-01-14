@@ -12,7 +12,7 @@ class Database
     {
         $dsn = 'mysql:host=127.0.01;port=3306;dbname=wisetest';
         $user = 'root';
-        $password = '990088Qq';
+        $password = '';
         $this->pdo = new PDO($dsn, $user, $password);
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
